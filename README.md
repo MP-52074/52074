@@ -13,6 +13,20 @@ Materia: SSL (2025)
 Este proyecto es un analizador léxico y sintáctico diseñado para scripts de automatización climática, utilizando ANTLR4 y Node.js. 
 Permite interpretar comandos en un lenguaje diseñado para monitorear y controlar variables ambientales (como temperatura y humedad) en escenarios como invernaderos.
 
+## Estructura de Archivos
+/52074
+
+├── src/
+
+│   ├── generated/  # Código generado por ANTLR4
+
+│   └── Clima.g4    # Gramática del lenguaje
+
+├── input.txt       # Script de entrada
+
+├── index.js        # Analizador principal
+
+└── package.json    # Configuración de Node.js
 
 ## Instalación y Ejecución
 1. Clonar repositorio:
@@ -37,22 +51,6 @@ imprimir "Humedad crítica" cada 60 min;
 
 }
 
-## Estructura de Archivos
-/52074
-
-├── src/
-
-│   ├── generated/  # Código generado por ANTLR4
-
-│   └── Clima.g4    # Gramática del lenguaje
-
-├── input.txt       # Script de entrada
-
-├── index.js        # Analizador principal
-
-└── package.json    # Configuración de Node.js
-
-
 ## Comandos Útiles
 
 Para regenerar analizador: npm run generate-parser
@@ -66,7 +64,10 @@ automate clima ejemplo {
   
 }
 
+
 <img width="338" alt="Image" src="https://github.com/user-attachments/assets/736dedcd-e0a4-459a-bb93-1b39c6920b39" />
+
+
 
 <img width="607" alt="Image" src="https://github.com/user-attachments/assets/ec6d9173-f2a1-4864-a1f7-d8e079bac4ef" />
 
@@ -114,15 +115,16 @@ Propósito:
 Automatiza la conversión de archivos generados por ANTLR4 al formato CommonJS, incluyendo la exportación de clases y la corrección de referencias.
 
 Qué hace:
-Reemplaza import por require.
+- Reemplaza import por require.
 - Sustituye export default class por class y añade la exportación con module.exports.
 - Corrige referencias internas en los archivos (antlr4.atn.ATNDeserializer, etc.).
 - Procesa los archivos ClimaLexer.js y ClimaParser.js.
 
 Diferencia con fix-imports.js:
-Es una versión más simplificada y con menos validaciones adicionales que fix1.js.
+- Es una versión más simplificada y con menos validaciones adicionales que fix1.js.
 
 5. fix1.js
+
 Propósito:
 Es una versión mejorada y completa de los scripts anteriores, diseñada para manejar conversiones avanzadas y realizar comprobaciones adicionales.
 
