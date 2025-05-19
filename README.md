@@ -26,10 +26,16 @@ git clone https://github.com/MP-52074/52074.git
 ## Configuración
 1. Crear/editar archivo input.txt en la raíz del proyecto con tu script:
 
-Ejemplo: automate clima mi_invernadero {
+Ejemplo: 
+
+automate clima mi_invernadero {
+
 monitorear temperatura cada 30 min;
+
 cuando humedad sube de 80 hacer activar riego;
+
 imprimir "Humedad crítica" cada 60 min;
+
 }
 
 ## Pasos para ejecutar el Scipt
@@ -54,9 +60,8 @@ npm start
 
 
 ## Comandos Útiles
-# Regenerar analizador
 
-npm run generate-parser
+Para regenerar analizador: npm run generate-parser
 
 ## Ejemplo de Salida
 📄 Input analizado:
@@ -72,7 +77,7 @@ automate clima ejemplo {
 <img width="607" alt="Image" src="https://github.com/user-attachments/assets/ec6d9173-f2a1-4864-a1f7-d8e079bac4ef" />
 
 
-## Solución de Problemas
+## Solución de Posibles Problemas
 1. Errores de sintaxis:
    - Verificar que input.txt siga la gramática de Clima.g4
    - Revisar terminadores (; o .) en cada instrucción
