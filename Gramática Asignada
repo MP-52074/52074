@@ -1,0 +1,13 @@
+<clima_script>::= "automate" "clima" <identificador> "{" {<accion> }* "}"
+
+<accion>::= <monitoreo> | <respuesta> | <imprimir>
+
+<monitoreo>::= "monitorear" <sensor_clima> "cada" numero "min"";"
+
+<respuesta>::= "cuando" <sensor_clima> "sube" "de" <numero> "hacer" "activar" <aspecto> ".
+
+<imprimir>::= "imprimir" """ <texto> "" "cada" <numero> "min" ";"
+
+<sensor_clima>::= "temperatura" | "humedad"
+
+<aspecto>::= "ventilacion" | "riego"
