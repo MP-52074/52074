@@ -1,8 +1,12 @@
 # Proyecto Analizador de Scripts Climáticos
 Alumno: Marcos Pedraza
+
 Carrera: Ingenieria en Sistemas de Instalación
+
 Comisión: 2k01
+
 Año: 2025
+
 Materia: SSL
 
 ## Descripción
