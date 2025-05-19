@@ -10,7 +10,7 @@ Comisión: 2k01
 Materia: SSL (2025)
 
 ## Descripción
-Este proyecto es un analizador léxico y sintáctico diseñado para scripts de automatización climática, utilizando ANTLR4 y Node.js. 
+  Este proyecto es un analizador léxico y sintáctico diseñado para scripts de automatización climática, utilizando ANTLR4 y Node.js. 
 Permite interpretar comandos en un lenguaje diseñado para monitorear y controlar variables ambientales (como temperatura y humedad) en escenarios como invernaderos.
 
 ## Estructura de Archivos
@@ -30,11 +30,15 @@ Permite interpretar comandos en un lenguaje diseñado para monitorear y controla
 
 ## Instalación y Ejecución
 1. Clonar repositorio:
-git clone https://github.com/MP-52074/52074.git
-2. Cambia la direccion al repositorio en el cmd: cd 52074/SSL\ Analizador
-3. Para abrir el proyecto en VS Code escribe en la terminal: code .
-4. Instalar dependencias: npm install
-5. Ejecutar: npm start
+   git clone https://github.com/MP-52074/52074.git
+2. Cambia la direccion al repositorio en el cmd:
+   cd 52074/SSL\ Analizador
+4. Para abrir el proyecto en VS Code escribe en la terminal:
+   code .
+6. Instalar dependencias:
+   npm install
+8. Ejecutar con:
+   npm start
 
 ## Configuración
 1. Crear/editar archivo input.txt en la raíz del proyecto con tu script:
@@ -74,14 +78,14 @@ automate clima ejemplo {
 
 ## Carpeta "correctores"
 
-Durante el desarrollo del proyecto surguieron inconvenientes, los cuales se solucionaron con los programas contenidos en esta carpeta.
+  Durante el desarrollo del proyecto surguieron inconvenientes, los cuales se solucionaron con los programas contenidos en esta carpeta.
 
 Utilidad de cada programa: 
 
 1. fix-imports.js
 
 Propósito:
-Convierte los archivos generados por ANTLR4 de sintaxis de ES Modules (import/export) a CommonJS (require/module.exports), que es más compatible con Node.js.
+  Convierte los archivos generados por ANTLR4 de sintaxis de ES Modules (import/export) a CommonJS (require/module.exports), que es más compatible con Node.js.
 
 Qué hace:
 - Reemplaza las declaraciones import de ES Modules por require de CommonJS.
@@ -92,7 +96,7 @@ Qué hace:
 2. fix-Parser.js
 
 Propósito:
-Corrige referencias internas específicas en los archivos ClimaLexer.js y ClimaParser.js generados por ANTLR4.
+  Corrige referencias internas específicas en los archivos ClimaLexer.js y ClimaParser.js generados por ANTLR4.
 
 Qué hace:
 - Sustituye referencias dentro de las clases de ANTLR4 (como antlr4.atn.ATNDeserializer) por versiones simplificadas (antlr4.ATNDeserializer).
@@ -102,7 +106,7 @@ Qué hace:
 3. settings.json
 
 Propósito:
-Archivo de configuración para Visual Studio Code.
+  Archivo de configuración para Visual Studio Code.
 
 Qué hace:
 - Define el shell integrado como PowerShell en Windows.
@@ -112,7 +116,7 @@ Qué hace:
 4. fix.js
 
 Propósito:
-Automatiza la conversión de archivos generados por ANTLR4 al formato CommonJS, incluyendo la exportación de clases y la corrección de referencias.
+  Automatiza la conversión de archivos generados por ANTLR4 al formato CommonJS, incluyendo la exportación de clases y la corrección de referencias.
 
 Qué hace:
 - Reemplaza import por require.
@@ -126,7 +130,7 @@ Diferencia con fix-imports.js:
 5. fix1.js
 
 Propósito:
-Es una versión mejorada y completa de los scripts anteriores, diseñada para manejar conversiones avanzadas y realizar comprobaciones adicionales.
+  Es una versión mejorada y completa de los scripts anteriores, diseñada para manejar conversiones avanzadas y realizar comprobaciones adicionales.
 
 Qué hace:
 - Convierte import a require con validaciones más avanzadas.
