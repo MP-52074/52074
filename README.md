@@ -98,6 +98,8 @@ Qué hace:
 - Sustituye export default class por class y añade module.exports para exportar las clases.
 - Procesa los archivos ClimaLexer.js, ClimaParser.js, y ClimaListener.js.
 
+Para ejecutarlo, copiar y pegar en la Terminal: node fix-imports.js
+
 2. fix-Parser.js
 
 Propósito:
@@ -107,6 +109,8 @@ Qué hace:
 - Sustituye referencias dentro de las clases de ANTLR4 (como antlr4.atn.ATNDeserializer) por versiones simplificadas (antlr4.ATNDeserializer).
 - Mejora la compatibilidad con versiones actuales de Node.js y librerías relacionadas.
 - Actualiza las referencias en los archivos procesados y confirma los cambios en la consola.
+
+Para ejecutarlo, copiar y pegar en la Terminal: node node fix-Parser.js
 
 3. settings.json
 
@@ -132,6 +136,8 @@ Qué hace:
 Diferencia con fix-imports.js:
 - Es una versión más simplificada y con menos validaciones adicionales que fix1.js.
 
+Para ejecutarlo, copiar y pegar en la Terminal: node fix.js
+
 5. fix1.js
 
 Propósito:
@@ -144,6 +150,8 @@ Qué hace:
 - Procesa los archivos especificados (ClimaLexer.js, ClimaParser.js, ClimaListener.js).
 - Incluye un mensaje de advertencia si detecta imports no convertidos en ClimaParser.js.
 - Un resumen detallado de los archivos procesados exitosamente y mensajes de advertencia si se encuentran problemas.
+
+Para ejecutarlo, copiar y pegar en la Terminal: node fix1.js
 
 ## Solución de Posibles Problemas
 1. Errores de sintaxis:
