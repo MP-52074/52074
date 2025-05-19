@@ -1,0 +1,5 @@
+automate clima casa {
+  monitorear temperatura cada 15 min;
+  cuando humedad sube de 80 hacer activar ventilacion.
+  imprimir "Registro de clima" cada 60 min;
+}
