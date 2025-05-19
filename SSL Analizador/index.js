@@ -10,7 +10,7 @@ import ClimaListener from './src/generated/ClimaListener.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const inputFilePath = path.join(__dirname, 'input.txt');
 
-// ===== Funciones auxiliares =====
+// ===== Funciones auxiliares mejoradas =====
 
 function cargarInput() {
     try {
@@ -43,29 +43,62 @@ function mostrarTablaLexemas(tokens) {
     console.log('-'.repeat(55));
 }
 
-// ===== Programa principal =====
+// ===== Programa principal con mejor manejo de errores =====
 
 const input = cargarInput();
 console.log('\n📄 Input analizado:\n' + input + '\n' + '='.repeat(50));
 
 const chars = new antlr4.CharStream(input);
 const lexer = new ClimaLexer(chars);
+
+// Listener de errores léxicos
+lexer.removeErrorListeners();
+lexer.addErrorListener({
+    syntaxError: (recognizer, offendingSymbol, line, column, msg, err) => {
+        console.error(`❌ Error léxico (${line}:${column}): ${msg}`);
+        console.error(`   Token inválido: '${offendingSymbol.text}'`);
+    }
+});
+
 const tokens = new antlr4.CommonTokenStream(lexer);
 const parser = new ClimaParser(tokens);
 
+// Listener de errores sintácticos mejorado
 parser.removeErrorListeners();
 parser.addErrorListener({
     syntaxError: (recognizer, offendingSymbol, line, column, msg, err) => {
-        if (msg.includes("expecting '.'")) {
-            console.warn(`⚠️  Advertencia (${line}:${column}): Se prefiere '.' pero se acepta ';'`);
-        } else {
-            console.error(`❌ Error (${line}:${column}): ${msg}`);
+        const errorType = msg.includes("missing") ? "Elemento faltante" : 
+                        msg.includes("extraneous") ? "Elemento inesperado" : 
+                        "Error de sintaxis";
+        
+        console.error(`\n❌ ${errorType} (${line}:${column}):`);
+        console.error(`   ${msg}`);
+        
+        // Mostrar contexto del error
+        const lines = input.split('\n');
+        if (line <= lines.length) {
+            console.error(`\nLínea ${line}: ${lines[line-1]}`);
+            console.error(' '.repeat(column + `Línea ${line}: `.length) + '^');
+        }
+        
+        // Sugerencias basadas en el error
+        if (msg.includes("expecting {'monitorear', 'cuando', 'imprimir'}")) {
+            console.error("   Sugerencia: Las acciones válidas son: monitorear, cuando o imprimir");
+        } else if (msg.includes("expecting '.'")) {
+            console.error("   Sugerencia: Termina la acción con '.' o ';'");
         }
     }
 });
 
-parser.buildParseTrees = true;
-const tree = parser.climaScript();
+let tree;
+try {
+    parser.buildParseTrees = true;
+    tree = parser.climaScript();
+} catch (e) {
+    console.error("\n💥 Error crítico al analizar la entrada:");
+    console.error(e.message);
+    process.exit(1);
+}
 
 tokens.fill();
 mostrarTablaLexemas(tokens.tokens);
@@ -84,7 +117,6 @@ class AnalizadorClima extends ClimaListener {
     }
     
     enterRespuesta(ctx) {
-        // MODIFICACIÓN SOLICITADA AQUÍ (cambio de formato)
         console.log(`   → Regla: Si ${ctx.sensorClima().getText()} > ${ctx.NUM().getText()}, activar ${ctx.aspecto().getText()}`);
     }
     
@@ -96,4 +128,10 @@ class AnalizadorClima extends ClimaListener {
 const walker = new antlr4.tree.ParseTreeWalker();
 walker.walk(new AnalizadorClima(), tree);
 
-console.log('\n✅ Análisis completado exitosamente!');
+// Verificación final de errores
+const errorCount = lexer._syntaxErrors + parser._syntaxErrors;
+if (errorCount === 0) {
+    console.log('\n✅ Análisis completado exitosamente!');
+} else {
+    console.log(`\n⚠️  Completado con ${errorCount} error(es). Revise los mensajes anteriores.`);
+}
