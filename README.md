@@ -34,7 +34,7 @@ Permite interpretar comandos en un lenguaje diseñado para monitorear y controla
    git clone https://github.com/MP-52074/52074.git
    
 2. Cambia la direccion al repositorio en el cmd con:
-   cd 52074/SSL\ Analizador
+   cd 52074/SSL Analizador
    
 3. Para abrir el proyecto en VS Code escribe en la terminal:
    code .
