@@ -29,15 +29,20 @@ Permite interpretar comandos en un lenguaje diseñado para monitorear y controla
 └── package.json    # Configuración de Node.js
 
 ## Instalación y Ejecución
-1. Clonar repositorio:
+
+1. Clonar repositorio con:
    git clone https://github.com/MP-52074/52074.git
-2. Cambia la direccion al repositorio en el cmd:
+   
+2. Cambia la direccion al repositorio en el cmd con:
    cd 52074/SSL\ Analizador
-4. Para abrir el proyecto en VS Code escribe en la terminal:
+   
+3. Para abrir el proyecto en VS Code escribe en la terminal:
    code .
-6. Instalar dependencias:
+   
+4. Instalar dependencias con:
    npm install
-8. Ejecutar con:
+   
+5. Ejecutar con:
    npm start
 
 ## Configuración
