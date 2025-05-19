@@ -39,19 +39,28 @@ npm start
 
 ## Estructura de Archivos
 /52074
+
 ├── src/
+
 │   ├── generated/  # Código generado por ANTLR4
+
 │   └── Clima.g4    # Gramática del lenguaje
+
 ├── input.txt       # Script de entrada
+
 ├── index.js        # Analizador principal
+
 └── package.json    # Configuración de Node.js
 
+
 ## Comandos Útiles
-# Regenerar analizador (si modificas Clima.g4)
+# Regenerar analizador
+
 npm run generate-parser
 
 ## Ejemplo de Salida
 📄 Input analizado:
+
 automate clima ejemplo {
 
   monitorear humedad cada 15 min;
@@ -60,20 +69,8 @@ automate clima ejemplo {
 
 <img width="338" alt="Image" src="https://github.com/user-attachments/assets/736dedcd-e0a4-459a-bb93-1b39c6920b39" />
 
+<img width="607" alt="Image" src="https://github.com/user-attachments/assets/ec6d9173-f2a1-4864-a1f7-d8e079bac4ef" />
 
-
-=== TABLA DE LEXEMAS ===
-| Tipo        | Lexema         | Posición  |
-|-------------|----------------|-----------|
-| ID          | ejemplo        | 1:8       |
-| NUM         | 15             | 2:23      |
-
-🌳 Árbol Sintáctico:
-(climaScript automate clima ejemplo...)
-
-🔧 Configuración Interpretada:
-   → Monitorear humedad cada 15 min
-   → Regla: Si humedad > 80, activar riego
 
 ## Solución de Problemas
 1. Errores de sintaxis:
