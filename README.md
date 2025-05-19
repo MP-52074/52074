@@ -53,9 +53,15 @@ npm run generate-parser
 ## Ejemplo de Salida
 📄 Input analizado:
 automate clima ejemplo {
+
   monitorear humedad cada 15 min;
+  
 }
+
 <img width="338" alt="Image" src="https://github.com/user-attachments/assets/736dedcd-e0a4-459a-bb93-1b39c6920b39" />
+
+
+
 === TABLA DE LEXEMAS ===
 | Tipo        | Lexema         | Posición  |
 |-------------|----------------|-----------|
