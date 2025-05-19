@@ -1,22 +1,26 @@
-# Proyecto Analizador de Scripts Climáticos
-Alumno: Marcos Pedraza
+# Clima Script
+Nombre: Marcos
 
-Carrera: Ingenieria en Sistemas de Información
+Apellido: Pedraza
+
+Carrera: Ing. en Sistemas de Información
 
 Comisión: 2k01
 
 Año: 2025
 
-Materia: SSL
+Materia: SSL (2025)
 
 ## Descripción
-Analizador léxico/sintáctico para scripts de automatización climática desarrollado con ANTLR4 y Node.js.
+Este proyecto es un analizador léxico y sintáctico diseñado para scripts de automatización climática, utilizando ANTLR4 y Node.js. 
+Permite interpretar comandos en un lenguaje diseñado para monitorear y controlar variables ambientales (como temperatura y humedad) en escenarios como invernaderos.
+
 
 ## Instalación
 1. Clonar repositorio:
 git clone https://github.com/MP-52074/52074.git
-2. Cambia la direccion al repositorio en el cmd: cd 52074/SSL Analizador
-3. Para abrir el proyecto en VS Code escribe esto en la terminal: code .
+2. Cambia la direccion al repositorio en el cmd: cd 52074/SSL\ Analizador
+3. Para abrir el proyecto en VS Code escribe en la terminal: code .
 4. Instalar dependencias: npm install
 
 ## Configuración
@@ -28,37 +32,30 @@ cuando humedad sube de 80 hacer activar riego;
 imprimir "Humedad crítica" cada 60 min;
 }
 
-## Ejecución
+## Pasos para ejecutar el Scipt
+
+En la Terminal, ejecutar:
 npm start
 
 ## Estructura de Archivos
 /52074
-
 ├── src/
-
-|        ├── generated/ # Código generado por ANTLR4
-
-|        └── Clima.g4      # Gramática del lenguaje
-
-├── input.txt         # Script de entrada
-
-├── index.js          # Analizador principal
-
-└── package.json      # Configuración de Node
+│   ├── generated/  # Código generado por ANTLR4
+│   └── Clima.g4    # Gramática del lenguaje
+├── input.txt       # Script de entrada
+├── index.js        # Analizador principal
+└── package.json    # Configuración de Node.js
 
 ## Comandos Útiles
 # Regenerar analizador (si modificas Clima.g4)
 npm run generate-parser
-
-# Ejecutar pruebas
-npm test
 
 ## Ejemplo de Salida
 📄 Input analizado:
 automate clima ejemplo {
   monitorear humedad cada 15 min;
 }
-
+<img width="338" alt="Image" src="https://github.com/user-attachments/assets/736dedcd-e0a4-459a-bb93-1b39c6920b39" />
 === TABLA DE LEXEMAS ===
 | Tipo        | Lexema         | Posición  |
 |-------------|----------------|-----------|
