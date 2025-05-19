@@ -7,8 +7,6 @@ Carrera: Ing. en Sistemas de Información
 
 Comisión: 2k01
 
-Año: 2025
-
 Materia: SSL (2025)
 
 ## Descripción
