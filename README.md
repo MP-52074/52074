@@ -14,12 +14,13 @@ Este proyecto es un analizador léxico y sintáctico diseñado para scripts de a
 Permite interpretar comandos en un lenguaje diseñado para monitorear y controlar variables ambientales (como temperatura y humedad) en escenarios como invernaderos.
 
 
-## Instalación
+## Instalación y Ejecución
 1. Clonar repositorio:
 git clone https://github.com/MP-52074/52074.git
 2. Cambia la direccion al repositorio en el cmd: cd 52074/SSL\ Analizador
 3. Para abrir el proyecto en VS Code escribe en la terminal: code .
 4. Instalar dependencias: npm install
+5. Ejecutar: npm start
 
 ## Configuración
 1. Crear/editar archivo input.txt en la raíz del proyecto con tu script:
@@ -35,11 +36,6 @@ cuando humedad sube de 80 hacer activar riego;
 imprimir "Humedad crítica" cada 60 min;
 
 }
-
-## Pasos para ejecutar el Scipt
-
-En la Terminal, ejecutar:
-npm start
 
 ## Estructura de Archivos
 /52074
