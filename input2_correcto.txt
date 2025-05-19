@@ -1,0 +1,5 @@
+automate clima oficina {
+  monitorear humedad cada 10 min;
+  cuando temperatura sube de 35 hacer activar ventilacion.
+  imprimir "Alerta de clima extremo" cada 30 min;
+}
