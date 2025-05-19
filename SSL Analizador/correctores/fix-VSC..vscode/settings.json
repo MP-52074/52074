@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "eslint.validate": ["javascript"]
+}

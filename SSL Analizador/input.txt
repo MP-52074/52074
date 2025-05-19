@@ -1,0 +1,5 @@
+automate clima mi_terreno {
+  monitorear temperatura cada 90 min;
+  cuando temperatura sube de 24 hacer activar ventilacion;
+  imprimir "Ojo: Temperatura elevada" cada 5 min;
+}
