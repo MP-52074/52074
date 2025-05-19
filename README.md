@@ -16,8 +16,8 @@ Analizador léxico/sintáctico para scripts de automatización climática desarr
 1. Clonar repositorio:
 git clone https://github.com/MP-52074/52074.git
 2. Cambia la direccion al repositorio en el cmd: cd 52074/SSL Analizador
-3. Instalar dependencias:
-npm install
+3. Para abrir el proyecto en VS Code escribe esto en la terminal: code .
+4. Instalar dependencias: npm install
 
 ## Configuración
 1. Crear/editar archivo input.txt en la raíz del proyecto con tu script:
