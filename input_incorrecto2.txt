@@ -1,0 +1,5 @@
+automate clima invernadero {
+  monitorear humedad cada 15 min
+  cuando temperatura sube de 30 hacer activar ventilacion.
+  imprimir "Estado del invernadero" cada 60 min;
+}
