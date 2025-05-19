@@ -36,9 +36,9 @@ npm start
 
 ├── src/
 
-        ├── generated/ # Código generado por ANTLR4
+|        ├── generated/ # Código generado por ANTLR4
 
-         └── Clima.g4      # Gramática del lenguaje
+|        └── Clima.g4      # Gramática del lenguaje
 
 ├── input.txt         # Script de entrada
 
